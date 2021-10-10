@@ -1,0 +1,36 @@
+version: "3"
+services:
+  backend:
+    depends_on:
+      - mongodb
+    restart: always
+    build: .
+    ports:
+      - "8080:3000"
+    environment:
+      - DB_URL=mongodb://mongodb
+      - DB_PORT=27017
+      - DB_NAME=dbtotal
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGODB_DATABASE="test"
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - "27017:27017"
+  mongoimport:
+    image: mongo:latest
+    links:
+      - mongodb
+    volumes:
+      - ./dbseed:/dbseed
+    command:
+      'bash -c "mongoimport --host mongodb --db dbtotal --port 27017 --collection products --type json --file /dbseed/produits.json --jsonArray"' 
+
+volumes:
+  mongodata: 
