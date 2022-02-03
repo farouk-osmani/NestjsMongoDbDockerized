@@ -10,7 +10,7 @@ services:
     environment:
       - DB_URL=mongodb://mongodb
       - DB_PORT=27017
-      - DB_NAME=dbtotal
+      - DB_NAME=dbnono
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -30,7 +30,7 @@ services:
     volumes:
       - ./dbseed:/dbseed
     command:
-      'bash -c "mongoimport --host mongodb --db dbtotal --port 27017 --collection products --type json --file /dbseed/produits.json --jsonArray"' 
+      'bash -c "mongoimport --host mongodb --db dbnono --port 27017 --collection products --type json --file /dbseed/produits.json --jsonArray"' 
 
 volumes:
   mongodata: 

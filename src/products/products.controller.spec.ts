@@ -17,15 +17,11 @@ describe('ProductsController', () => {
   });
 
   describe('create', () => {
-    it('should return a new product created', async () => {
-      
-    });
+    it('should return a new product created', async () => {});
   });
-  
+
   describe('findOne', () => {
-    it('should return one product by id', async () => {
-     
-    });
+    it('should return one product by id', async () => {});
   });
 
   describe('findAll', () => {
@@ -52,7 +48,7 @@ describe('ProductsController', () => {
           sku: 'A0004',
           price: 1399,
           quantity: 5,
-        }
+        },
       ];
       jest
         .spyOn(productsService, 'findAll')

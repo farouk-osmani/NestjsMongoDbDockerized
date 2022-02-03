@@ -5,7 +5,7 @@ import { ProductsService } from './products.service';
 describe('ProductsService', () => {
   let service: ProductsService;
 
-/*  beforeEach(async () => {
+  /*  beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [ProductsService],
       imports: [ProductsModule],
@@ -15,6 +15,6 @@ describe('ProductsService', () => {
   });*/
 
   it('should be defined', () => {
-   // expect(service).toBeDefined();
+    // expect(service).toBeDefined();
   });
 });

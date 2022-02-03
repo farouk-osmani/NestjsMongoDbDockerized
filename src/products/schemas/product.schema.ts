@@ -20,10 +20,10 @@ export class Product {
   @Prop()
   quantity: number;
 
-  @Prop({default: Date.now()})
-  created_at? : Date;
+  @Prop({ default: Date.now() })
+  created_at?: Date;
 
-  @Prop({default: Date.now()})
+  @Prop({ default: Date.now() })
   modified_at?: Date;
 }
 

@@ -19,13 +19,7 @@ export class ProductsService {
   }
 
   findAll(): Promise<Product[]> {
-    return this.productModel
-      .find()
-      .exec()
-      .then((body) => body)
-      .catch((error) => {
-        throw error;
-      });
+    return this.productModel.find().exec();
   }
 
   findOne(id: string): Promise<Product> {
